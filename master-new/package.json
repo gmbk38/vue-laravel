@@ -1,0 +1,22 @@
+{
+  "name": "vue-app",
+  "version": "1.0.0",
+  "description": "A Vue.js admin app",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "vue-cli-service build --mode production && npm run serve:prod",
+    "serve:prod": "http-server dist -p 80 --gzip --proxy http://localhost:80?"
+  },
+  "dependencies": {
+    "vue": "^3.3.4",
+    "http-server": "^14.1.1",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "eslint": "^7.12.1",
+    "eslint-plugin-vue": "^9.11.0"
+  }
+}

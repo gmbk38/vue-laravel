@@ -1,0 +1,15 @@
+stages:
+  - docker_build
+
+variables:
+  DOCKER_REGISTRY: "hh.example.ru:5000"
+
+build-master:
+  stage: docker_build
+  tags:
+    - docker-build
+  script:
+    - docker build -t "$DOCKER_REGISTRY/master:$CI_COMMIT_SHORT_SHA" .
+    - docker push "$DOCKER_REGISTRY/master:$CI_COMMIT_SHORT_SHA"
+  only:
+    - master
